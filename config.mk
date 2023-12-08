@@ -2,8 +2,8 @@
 VERSION = 5.0
 
 # paths
-PREFIX = /usr
-MANPREFIX = $(PREFIX)/share/man
+PREFIX ?= /usr/local/
+MANPREFIX ?= $(PREFIX)/share/man
 
 X11INC = /usr/X11R6/include
 X11LIB = /usr/X11R6/lib
@@ -28,5 +28,4 @@ CFLAGS   = -std=c99 -pedantic -Wall -O2 $(INCS) $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 
 # compiler and linker
-CC=gcc
-#CC = tcc
+CC ?= gcc
