@@ -5,6 +5,7 @@
 *.swp
 *~
 !dmenu_*
+*.lock
 
 #!*.c
 #!*.h
