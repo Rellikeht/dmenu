@@ -23,7 +23,6 @@
     in {
       packages.default = pkgs.stdenv.mkDerivation rec {
         inherit name system src;
-
         PREFIX = "$(out)";
         CC = pkgs.gcc;
 
@@ -33,15 +32,24 @@
           xorg.libXinerama
         ];
 
-        buildPhase = "
-            make clean
-            make
-            ";
+        buildPhase = ''
+          make clean
+          make
+        '';
 
-        installPhase = "
+        installPhase = ''
           mkdir -p $out/bin
           make install
-          ";
+        '';
+
+        meta = with pkgs.lib; {
+          homepage = "https://tools.suckless.org/dmenu";
+          description = "Suckless dmenu, Rellikeht's build";
+          license = licenses.mit;
+          mainProgram = "dmenu";
+          maintainers = ["Rellikeht"];
+          platforms = platforms.linux;
+        };
       };
     });
 }
