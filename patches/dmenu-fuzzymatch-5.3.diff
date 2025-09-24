@@ -30,12 +30,12 @@ index 137f7c8..6a19175 100644
 @@ -21,7 +21,7 @@ FREETYPEINC = /usr/include/freetype2
  
  # includes and libs
- INCS = -I$(X11INC) -I$(FREETYPEINC)
--LIBS = -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS)
-+LIBS = -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS) -lm
+ INCS ?= -I$(X11INC) -I$(FREETYPEINC)
+-LIBS ?= -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS)
++LIBS ?= -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS) -lm
  
  # flags
- CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"$(VERSION)\" $(XINERAMAFLAGS)
+ CPPFLAGS ?= -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"$(VERSION)\" $(XINERAMAFLAGS)
 diff --git a/dmenu.1 b/dmenu.1
 index 323f93c..e2c5ef4 100644
 --- a/dmenu.1
@@ -68,9 +68,9 @@ index 40f93e0..03e1f45 100644
  #include <ctype.h>
  #include <locale.h>
 +#include <math.h>
+ #include <stdbool.h>
  #include <stdio.h>
  #include <stdlib.h>
- #include <string.h>
 @@ -31,6 +32,7 @@ struct item {
  	char *text;
  	struct item *left, *right;
@@ -177,8 +177,8 @@ index 40f93e0..03e1f45 100644
  static void
  usage(void)
  {
--	die("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
-+	die("usage: dmenu [-bFfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
+-	die("usage: dmenu [-bfivS] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
++	die("usage: dmenu [-bFfivS] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
  	    "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]");
  }
  

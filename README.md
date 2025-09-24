@@ -24,3 +24,12 @@ make clean install
 ## Running dmenu
 
 See the man page for details.
+
+## Added patches
+
+Some of those was modified to fit new version or others:
+
+- caseinsensitive
+- nosort
+- fuzzymatch
+- xresources-alt

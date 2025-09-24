@@ -1,10 +1,11 @@
 diff -rupN orig/config.def.h patched/config.def.h
 --- orig/config.def.h	2021-04-16 06:30:47.713924755 +0300
 +++ patched/config.def.h	2021-04-16 06:34:14.956933252 +0300
-@@ -2,16 +2,25 @@
+@@ -2,17 +2,26 @@
  /* Default settings; can be overriden by command line. */
  
  static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
+ static int fuzzy  = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching */
 +
  /* -fn option overrides fonts[0]; default X11 font or font set */
 +static char font[] = "monospace:size=10";
@@ -88,7 +89,7 @@ diff -rupN orig/dmenu.c patched/dmenu.c
  	default:
 -insert:
 +	insert:
- 		if (!iscntrl(*buf))
+ 		if (!iscntrl((unsigned char)*buf))
  			insert(buf, len);
  		break;
 @@ -547,6 +563,54 @@ readstdin(void)

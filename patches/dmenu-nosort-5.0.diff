@@ -71,20 +71,20 @@ index 65f25ce..efe968c 100644
  static void
  usage(void)
  {
--	fputs("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
-+	fputs("usage: dmenu [-bfivS] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
- 	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n", stderr);
- 	exit(1);
+-	die("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
++	die("usage: dmenu [-bfivS] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
+	    "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]");
  }
+ 
 @@ -709,6 +716,8 @@ main(int argc, char *argv[])
  			topbar = 0;
  		else if (!strcmp(argv[i], "-f"))   /* grabs keyboard before reading stdin */
  			fast = 1;
 +		else if (!strcmp(argv[i], "-S"))   /* do not sort matches */
 +			sortmatches = false;
- 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
- 			fstrncmp = strncasecmp;
- 			fstrstr = cistrstr;
+ 		else if (!strcmp(argv[i], "-s")) { /* case-sensitive item matching */
+ 			fstrncmp = strncmp;
+ 			fstrstr = strstr;
 --
 2.25.1
 
