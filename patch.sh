@@ -17,7 +17,10 @@ for patch in \
     dmenu-caseinsensitive-20200523-db6093f.diff \
     dmenu-nosort-5.0.diff \
     dmenu-fuzzymatch-5.3.diff \
+    dmenu-fuzzyhighlight-5.3.diff \
     dmenu-xresources-alt-5.0.diff \
+
+    # dmenu-nonblockingstdincontrol-4.9.diff \
 
 do
     echo "Applying $patch"
