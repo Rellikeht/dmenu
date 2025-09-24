@@ -32,4 +32,5 @@ Some of those was modified to fit new version or others:
 - caseinsensitive
 - nosort
 - fuzzymatch
+- fuzzyhighlight
 - xresources-alt

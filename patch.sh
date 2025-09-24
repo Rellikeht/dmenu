@@ -20,8 +20,6 @@ for patch in \
     dmenu-fuzzyhighlight-5.3.diff \
     dmenu-xresources-alt-5.0.diff \
 
-    # dmenu-nonblockingstdincontrol-4.9.diff \
-
 do
     echo "Applying $patch"
     patch -p1 <"$PATCH_DIR/$patch"
