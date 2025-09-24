@@ -1,8 +1,8 @@
 # dmenu version
-VERSION = 5.0
+VERSION = 5.4
 
 # paths
-PREFIX = /usr
+PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
 X11INC = /usr/X11R6/include
@@ -17,6 +17,7 @@ FREETYPELIBS = -lfontconfig -lXft
 FREETYPEINC = /usr/include/freetype2
 # OpenBSD (uncomment)
 #FREETYPEINC = $(X11INC)/freetype2
+#MANPREFIX = ${PREFIX}/man
 
 # includes and libs
 INCS = -I$(X11INC) -I$(FREETYPEINC)
@@ -28,5 +29,4 @@ CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 
 # compiler and linker
-CC=gcc
-#CC = tcc
+CC = cc
