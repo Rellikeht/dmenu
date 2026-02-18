@@ -7,11 +7,16 @@ static int fuzzy  = 1;                      /* -F  option; if 0, dmenu doesn't u
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static char font[] = "MesloLGS NF:size=12:antialias=true:autohint=true";
 static const char *fonts[] = {
-	font,
-  // just put all possible names just in case
-  "MesloLGS Nerd Font:size=12:antialias=true:autohint=true",
-  "MesloLGS:size=12:antialias=true:autohint=true",
-	"monospace:size=12",
+    font,
+    // All possible combinations just in case
+    "MesloLGS NF:size=12:antialias=true:autohint=true",
+    "MesloLGS Nerd FontF:size=12:antialias=true:autohint=true",
+    "MesloLGS:size=12:antialias=true:autohint=true",
+    "MesloLGS:size=12",
+    "MesloLGS NF:size=12",
+    "MesloLGS Nerd FontF:size=12",
+    "MesloLGS:size=12",
+    "monospace:size=12",
 };
 
 static char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
