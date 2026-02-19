@@ -31,4 +31,5 @@ Some of those was modified to fit new version or others:
 - nosort
 - fuzzymatch
 - fuzzyhighlight
-- xresources-alt
+- xresources-alt - with improved config that prevents segfaults on too 
+  short string buffers
