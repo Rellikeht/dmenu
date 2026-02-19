@@ -39,9 +39,9 @@
 
         buildInputs = with pkgs; [
           # {{{
-          xorg.libX11
-          xorg.libXft
-          xorg.libXinerama
+          libX11
+          libXft
+          libXinerama
         ]; # }}}
 
         buildPhase =
