@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-set -eo pipefail
+set -e
 
 dmenu_path | dmenu "$@" | ${SHELL:-"/usr/bin/env sh"}
